@@ -4,6 +4,8 @@
 
 html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: whitesmoke;
+    overflow: hidden;
 }
 
 .container {
@@ -11,11 +13,73 @@ html, body {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr min(60vw, 60vh) 1fr;
     height: 100vh;
+    justify-items: center;
 }
 
 .board {
     width: min(80%, 800px);
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.btn {
+    border: 1px solid black;
+    background-color: white;
+    transition: 0.2s background-color;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.btn:hover {
+    background-color: whitesmoke;
+}
+
+.turn {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.start button{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    border: 1px solid #1d1d1d;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    width: 6rem;
+    background-color: whitesmoke;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.start button:hover{
+    background-color: #1d1d1d;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+form {
+    margin: 1rem 0;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    width: 190px;
+}
+
+form input {
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.announcement {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
 }
